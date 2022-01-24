@@ -19,7 +19,7 @@ public class CustomersOrders {
 
     /*    Usecase 1 - Customer order count
           Get order count per customer for the month of 2014 January.
-          * Tables - orders and customers
+          * Tables - orders and customers.
           * Data should be sorted in descending order by count and ascending order by customer id.
           * Output should contain customer_id, customer_first_name, customer_last_name and customer_order_count.
     */

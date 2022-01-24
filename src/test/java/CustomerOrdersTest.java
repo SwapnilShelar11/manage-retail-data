@@ -7,14 +7,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Map;
+import java.util.Properties;
+
 import static org.junit.Assert.assertEquals;
 
 public class CustomerOrdersTest extends Util {
     private static Dataset<Row> orderData;
     private static Dataset<Row> customerData;
     private static Map<String, String> env = System.getenv();
-    private static String readDir = "C:\\Users\\Swapnil Shelar\\IdeaProjects\\spark-java\\use-case-retail_db\\retail_db\\read";
-    private static String writeDir = "C:\\Users\\Swapnil Shelar\\IdeaProjects\\spark-java\\use-case-retail_db\\retail_db\\write";
+    private static Properties prop =new Properties();
+    private static String readDir = prop.getProperty("readDir");
+    private static String writeDir = prop.getProperty("writeDir");
     private static CustomersOrders csObj=new CustomersOrders();
     private static ReadData dfObj=new ReadData();
     private static Dataset<Row> resultOrdersCount;
