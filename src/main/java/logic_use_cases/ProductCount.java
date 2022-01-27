@@ -14,7 +14,7 @@ public class ProductCount {
     /*
           Usecase 5 - Product Count Per Department
           Get the products for each department.
-          * Tables - departments, categories, products
+          * Tables - departments, categories, products.
           * Data should be sorted in ascending order by department_id
           * Output should contain all the fields from department and the product count as product_count
     */

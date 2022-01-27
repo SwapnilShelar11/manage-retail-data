@@ -4,6 +4,8 @@ import main_use_cases.Util;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import java.util.Map;
+import java.util.Properties;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -13,8 +15,9 @@ public class ProductCountTest extends Util {
     private static Dataset<Row> categoryData;
     private static Dataset<Row> deptData;
     private static Map<String, String> env = System.getenv();
-    private static String readDir = "C:\\Users\\Swapnil Shelar\\IdeaProjects\\spark-java\\use-case-retail_db\\retail_db\\read";
-    private static String writeDir = "C:\\Users\\Swapnil Shelar\\IdeaProjects\\spark-java\\use-case-retail_db\\retail_db\\write";
+    private static Properties prop =new Properties();
+    private static String readDir = prop.getProperty("readDir");
+    private static String writeDir = prop.getProperty("writeDir");
     private static ProductCount pcObj=new ProductCount();
     private static ReadData dfObj=new ReadData();
     private static Dataset<Row> resultProdCount;

@@ -25,7 +25,7 @@ public class RevenueGenerator {
        * Data should be sorted in descending order by revenue and then ascending order by customer_id
        * Output should contain customer_id, customer_first_name, customer_last_name, customer_revenue.
        * If there are no orders placed by customer, then the corresponding revenue for a give customer should be 0.
-       * Consider only COMPLETE and CLOSED orders
+       * Consider only COMPLETE and CLOSED orders.
  */
     public void revenuePerCust(Dataset<Row> orderData, Dataset<Row> customerData, Dataset<Row> ordItemsData, String writeDir) {
 
