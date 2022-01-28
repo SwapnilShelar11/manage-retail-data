@@ -20047,3 +20047,42 @@
 18 Jan 2022 11:52:31,031-Thread-1--INFO -org.apache.spark.SparkContext:Successfully stopped SparkContext
 18 Jan 2022 11:52:31,032-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Shutdown hook called
 18 Jan 2022 11:52:31,032-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Deleting directory C:\Users\Swapnil Shelar\AppData\Local\Temp\spark-76b4bef6-589d-4646-860b-f5a6dce73391
+28 Jan 2022 09:07:04,493-main--INFO -org.apache.spark.sql.internal.SharedState:Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/C:/Users/Swapnil%20Shelar/IdeaProjects/spark-java/use-case/manage-retail-data/spark-warehouse').
+28 Jan 2022 09:07:04,496-main--INFO -org.apache.spark.sql.internal.SharedState:Warehouse path is 'file:/C:/Users/Swapnil%20Shelar/IdeaProjects/spark-java/use-case/manage-retail-data/spark-warehouse'.
+28 Jan 2022 09:07:06,046-main--INFO -org.apache.spark.sql.execution.streaming.state.StateStoreCoordinatorRef:Registered StateStoreCoordinator endpoint
+28 Jan 2022 09:07:06,285-Thread-1--INFO -org.apache.spark.SparkContext:Invoking stop() from shutdown hook
+28 Jan 2022 09:07:06,312-Thread-1--INFO -org.apache.spark.ui.SparkUI:Stopped Spark web UI at http://Clairvoyant-199.mshome.net:4040
+28 Jan 2022 09:07:06,335-dispatcher-event-loop-1--INFO -org.apache.spark.MapOutputTrackerMasterEndpoint:MapOutputTrackerMasterEndpoint stopped!
+28 Jan 2022 09:07:06,347-Thread-1--INFO -org.apache.spark.storage.memory.MemoryStore:MemoryStore cleared
+28 Jan 2022 09:07:06,348-Thread-1--INFO -org.apache.spark.storage.BlockManager:BlockManager stopped
+28 Jan 2022 09:07:06,361-Thread-1--INFO -org.apache.spark.storage.BlockManagerMaster:BlockManagerMaster stopped
+28 Jan 2022 09:07:06,366-dispatcher-event-loop-0--INFO -org.apache.spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:OutputCommitCoordinator stopped!
+28 Jan 2022 09:07:06,380-Thread-1--INFO -org.apache.spark.SparkContext:Successfully stopped SparkContext
+28 Jan 2022 09:07:06,381-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Shutdown hook called
+28 Jan 2022 09:07:06,382-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Deleting directory C:\Users\Swapnil Shelar\AppData\Local\Temp\spark-6cd4e2b0-57c6-4b51-a0b5-d2ea5caee214
+28 Jan 2022 09:12:36,874-main--INFO -org.apache.spark.sql.internal.SharedState:Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/C:/Users/Swapnil%20Shelar/IdeaProjects/spark-java/use-case/manage-retail-data/spark-warehouse').
+28 Jan 2022 09:12:36,876-main--INFO -org.apache.spark.sql.internal.SharedState:Warehouse path is 'file:/C:/Users/Swapnil%20Shelar/IdeaProjects/spark-java/use-case/manage-retail-data/spark-warehouse'.
+28 Jan 2022 09:12:37,645-main--INFO -org.apache.spark.sql.execution.streaming.state.StateStoreCoordinatorRef:Registered StateStoreCoordinator endpoint
+28 Jan 2022 09:12:37,726-Thread-1--INFO -org.apache.spark.SparkContext:Invoking stop() from shutdown hook
+28 Jan 2022 09:12:37,736-Thread-1--INFO -org.apache.spark.ui.SparkUI:Stopped Spark web UI at http://Clairvoyant-199.mshome.net:4040
+28 Jan 2022 09:12:37,751-dispatcher-event-loop-1--INFO -org.apache.spark.MapOutputTrackerMasterEndpoint:MapOutputTrackerMasterEndpoint stopped!
+28 Jan 2022 09:12:37,761-Thread-1--INFO -org.apache.spark.storage.memory.MemoryStore:MemoryStore cleared
+28 Jan 2022 09:12:37,762-Thread-1--INFO -org.apache.spark.storage.BlockManager:BlockManager stopped
+28 Jan 2022 09:12:37,769-Thread-1--INFO -org.apache.spark.storage.BlockManagerMaster:BlockManagerMaster stopped
+28 Jan 2022 09:12:37,773-dispatcher-event-loop-0--INFO -org.apache.spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:OutputCommitCoordinator stopped!
+28 Jan 2022 09:12:37,781-Thread-1--INFO -org.apache.spark.SparkContext:Successfully stopped SparkContext
+28 Jan 2022 09:12:37,781-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Shutdown hook called
+28 Jan 2022 09:12:37,782-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Deleting directory C:\Users\Swapnil Shelar\AppData\Local\Temp\spark-fc64ccbd-328e-4fee-8c10-05ea17c6ba8f
+28 Jan 2022 09:14:39,000-main--INFO -org.apache.spark.sql.internal.SharedState:Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/C:/Users/Swapnil%20Shelar/IdeaProjects/spark-java/use-case/manage-retail-data/spark-warehouse').
+28 Jan 2022 09:14:39,002-main--INFO -org.apache.spark.sql.internal.SharedState:Warehouse path is 'file:/C:/Users/Swapnil%20Shelar/IdeaProjects/spark-java/use-case/manage-retail-data/spark-warehouse'.
+28 Jan 2022 09:14:39,783-main--INFO -org.apache.spark.sql.execution.streaming.state.StateStoreCoordinatorRef:Registered StateStoreCoordinator endpoint
+28 Jan 2022 09:14:39,917-Thread-1--INFO -org.apache.spark.SparkContext:Invoking stop() from shutdown hook
+28 Jan 2022 09:14:39,939-Thread-1--INFO -org.apache.spark.ui.SparkUI:Stopped Spark web UI at http://Clairvoyant-199.mshome.net:4040
+28 Jan 2022 09:14:39,983-dispatcher-event-loop-1--INFO -org.apache.spark.MapOutputTrackerMasterEndpoint:MapOutputTrackerMasterEndpoint stopped!
+28 Jan 2022 09:14:39,998-Thread-1--INFO -org.apache.spark.storage.memory.MemoryStore:MemoryStore cleared
+28 Jan 2022 09:14:40,000-Thread-1--INFO -org.apache.spark.storage.BlockManager:BlockManager stopped
+28 Jan 2022 09:14:40,010-Thread-1--INFO -org.apache.spark.storage.BlockManagerMaster:BlockManagerMaster stopped
+28 Jan 2022 09:14:40,015-dispatcher-event-loop-0--INFO -org.apache.spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:OutputCommitCoordinator stopped!
+28 Jan 2022 09:14:40,021-Thread-1--INFO -org.apache.spark.SparkContext:Successfully stopped SparkContext
+28 Jan 2022 09:14:40,022-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Shutdown hook called
+28 Jan 2022 09:14:40,022-Thread-1--INFO -org.apache.spark.util.ShutdownHookManager:Deleting directory C:\Users\Swapnil Shelar\AppData\Local\Temp\spark-07d9e369-1a9b-4d46-864a-9b309af15cdf
