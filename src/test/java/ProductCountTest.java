@@ -26,7 +26,7 @@ public class ProductCountTest extends Util {
         prodData=dfObj.retailDbData(readDir,"products");
         categoryData=dfObj.retailDbData(readDir,"categories");
         deptData=dfObj.retailDbData(readDir,"departments");
-        pcObj.productCountPerDept(deptData,categoryData,prodData,writeDir);
+        pcObj.productCountPerDept(deptData,categoryData,prodData);
         resultProdCount = pcObj.resultprodCount;
     }
 

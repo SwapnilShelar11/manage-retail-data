@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="use-case-retail_db" />
+        <module name="manage-retail-data" />
       </profile>
     </annotationProcessing>
   </component>

@@ -31,9 +31,9 @@ public class RevenueGeneratorTest {
         categoryData=dfObj.retailDbData(readDir,"categories");
         ordItemData=dfObj.retailDbData(readDir,"order_items");
         customerData=dfObj.retailDbData(readDir,"customers");
-        rgObj.revenuePerCategory(orderData,categoryData,ordItemData,prodData,writeDir);
+        rgObj.revenuePerCategory(orderData,categoryData,ordItemData,prodData);
         resultRevenueCategory=rgObj.resultRevenueCategory;
-        rgObj.revenuePerCust(orderData,customerData,ordItemData,writeDir);
+        rgObj.revenuePerCust(orderData,customerData,ordItemData);
         resultRevenuePerCust=rgObj.resultRevenueCust;
 
     }

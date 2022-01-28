@@ -26,8 +26,8 @@ public class CustomerOrdersTest extends Util {
     public static void beforeClass(){
         orderData=dfObj.retailDbData(readDir,"orders");
         customerData=dfObj.retailDbData(readDir,"customers");
-        csObj.custOrdersCount(orderData,customerData,writeDir);
-        csObj.dormantCustomers(orderData,customerData,writeDir);
+        csObj.custOrdersCount(orderData,customerData);
+        csObj.dormantCustomers(orderData,customerData);
         resultOrdersCount=csObj.resultOrdersCount;
         resultDormant=csObj.resultDormant;
     }

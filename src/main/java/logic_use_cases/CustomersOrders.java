@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 
 import static org.apache.spark.sql.functions.col;
 import static org.apache.spark.sql.functions.count;
@@ -23,7 +24,7 @@ public class CustomersOrders {
           * Data should be sorted in descending order by count and ascending order by customer id.
           * Output should contain customer_id, customer_first_name, customer_last_name and customer_order_count.
     */
-    public void custOrdersCount(Dataset<Row> orderData, Dataset<Row> customerData, String writeDir) {
+    public void custOrdersCount(Dataset<Row> orderData, Dataset<Row> customerData) {
 
         resultOrdersCount = orderData.join(customerData, orderData.col("order_customer_id")
                         .equalTo(customerData.col(customerId)), "inner")
@@ -33,7 +34,9 @@ public class CustomersOrders {
                 .orderBy(col("customer_order_count").desc(), col(customerId).cast("int"));
         resultOrdersCount.show();
         logger.info("Result - orders count per customer is ready");
-        resultOrdersCount.coalesce(1).write().option("header", "true").mode("overwrite")
+    }
+    public void writeCustOrdersCount(String writeDir){
+        resultOrdersCount.repartition(1).write().option("header", "true").mode(SaveMode.Overwrite)
                 .csv(writeDir + "\\" + "customers_orders_count");
         logger.info("Result is written into specific location...");
     }
@@ -44,7 +47,7 @@ public class CustomersOrders {
          * Data should be sorted in ascending order by customer_id
          * Output should contain all the fields from customers
     */
-    public void dormantCustomers(Dataset<Row> orderData, Dataset<Row> customerData, String writeDir) {
+    public void dormantCustomers(Dataset<Row> orderData, Dataset<Row> customerData) {
 
         Dataset<Row> newOrdersData = orderData.filter("order_date like '2014-01%'");
         resultDormant = newOrdersData.join(customerData, orderData.col("order_customer_id")
@@ -55,7 +58,10 @@ public class CustomersOrders {
                         "customer_password", "customer_street", "customer_city", "customer_state", "customer_zipcode");
         resultDormant.show();
         logger.info("Result - dormant customers ");
-        resultDormant.coalesce(1).write().option("header", "true").mode("overwrite")
+
+    }
+    public void writeDormantCustomers(String writeDir){
+        resultDormant.coalesce(1).write().option("header", "true").mode(SaveMode.Overwrite)
                 .csv(writeDir + "\\" + "dormant_customers");
         logger.info("Result is written into specific location...");
     }

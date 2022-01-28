@@ -3,6 +3,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
+
 public class ProductCount {
     public ProductCount(){
         PropertyConfigurator.configure("src/main/resources/log4j_use_case.properties");
@@ -18,7 +20,7 @@ public class ProductCount {
           * Data should be sorted in ascending order by department_id
           * Output should contain all the fields from department and the product count as product_count
     */
-    public void productCountPerDept(Dataset<Row> deptData,Dataset<Row> categoryData, Dataset<Row> prodData,String writeDir){
+    public void productCountPerDept(Dataset<Row> deptData,Dataset<Row> categoryData, Dataset<Row> prodData){
         resultprodCount=prodData.join(categoryData,prodData.col("product_category_id")
                         .equalTo(categoryData.col("category_id")),"inner")
                 .join(deptData,deptData.col(departmentId)
@@ -29,8 +31,9 @@ public class ProductCount {
 
         logger.info("Result of product count per category is ready...");
         resultprodCount.show();
-
-        resultprodCount.coalesce(1).write().option("header", "true").mode("overwrite")
+    }
+    public void writeProductCountPerDept(String writeDir){
+        resultprodCount.coalesce(1).write().option("header", "true").mode(SaveMode.Overwrite)
                 .csv(writeDir + "\\" +"productCountPerDept");
         logger.info("Result is written into specific location...");
     }

@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 
 import static org.apache.spark.sql.functions.*;
 
@@ -27,7 +28,7 @@ public class RevenueGenerator {
        * If there are no orders placed by customer, then the corresponding revenue for a give customer should be 0.
        * Consider only COMPLETE and CLOSED orders.
  */
-    public void revenuePerCust(Dataset<Row> orderData, Dataset<Row> customerData, Dataset<Row> ordItemsData, String writeDir) {
+    public void revenuePerCust(Dataset<Row> orderData, Dataset<Row> customerData, Dataset<Row> ordItemsData) {
 
         Dataset<Row> newOrderData = orderData.filter("order_date like '2014-01%' AND order_status in ('COMPLETE','CLOSED')");
         resultRevenueCust = newOrderData.join(ordItemsData, newOrderData.col("order_id")
@@ -41,8 +42,11 @@ public class RevenueGenerator {
                                 .otherwise(0));
         resultRevenueCust.show();
         logger.info("Result - Revenue per customer is ready");
-        resultRevenueCust.coalesce(1).write().option("header", "true").mode("overwrite")
+    }
+    public void writeRevenuePerCust(String writeDir){
+        resultRevenueCust.coalesce(1).write().option("header", "true").mode(SaveMode.Overwrite)
                 .csv(writeDir + "\\" + "revenue_per_customer");
+        logger.info("Result written in specified location");
     }
 
     /*
@@ -53,7 +57,7 @@ public class RevenueGenerator {
          * Output should contain all the fields from category along with the revenue as category_revenue.
          * Consider only COMPLETE and CLOSED orders
     */
-    public void revenuePerCategory(Dataset<Row> orderData, Dataset<Row> categoryData, Dataset<Row> ordItemsData, Dataset<Row> prodData, String writeDir) {
+    public void revenuePerCategory(Dataset<Row> orderData, Dataset<Row> categoryData, Dataset<Row> ordItemsData, Dataset<Row> prodData) {
 
         resultRevenueCategory = orderData.join(ordItemsData, orderData.col("order_id")
                         .equalTo(ordItemsData.col("order_item_order_id")))
@@ -68,8 +72,11 @@ public class RevenueGenerator {
                 .orderBy(col(categoryId).cast("int"));
         resultRevenueCategory.show();
         logger.info("Result - Revenue per customer is ready");
-        resultRevenueCategory.coalesce(1).write().option("header", "true").mode("overwrite")
+    }
+    public void writeRevenuePerCategory(String writeDir){
+        resultRevenueCategory.coalesce(1).write().option("header", "true").mode(SaveMode.Overwrite)
                 .csv(writeDir + "\\" + "revenue_per_category");
+        logger.info("Result written in specified location");
     }
 }
 
